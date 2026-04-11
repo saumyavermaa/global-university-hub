@@ -35,4 +35,3 @@ Universities API (Public API)
 
 ---
 
-## 📂 Project Structure
