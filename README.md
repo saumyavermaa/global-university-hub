@@ -1,4 +1,4 @@
-# 🌍 Global University Hub
+# 🌍 Global University Hub --> https://globalunihub.netlify.app/
 
 ## 📌 Overview
 Global University Hub is a web application that allows users to search and explore universities from around the world. It uses a public API to fetch real-time data and displays it in a clean and interactive interface.
