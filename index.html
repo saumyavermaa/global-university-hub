@@ -4,25 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global University Hub</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Global University Hub</h1>
-        <div class="controls">
-            <input type="text" id="countryInput" placeholder="Enter country (e.g., India, USA)...">
-            <button id="searchBtn">Search</button>
-            <select id="sortOrder">
-                <option value="asc">Sort A-Z</option>
-                <option value="desc">Sort Z-A</option>
-            </select>
+
+<div class="cursor-glow"></div>
+<div class="cursor-dot"></div>
+
+<header>
+    <h1>🌍 Global University Hub</h1>
+</header>
+
+<div class="controls">
+    <input type="text" id="countryInput" placeholder="Enter country name...">
+
+    <select id="sortOrder">
+        <option value="asc">Sort A-Z</option>
+        <option value="desc">Sort Z-A</option>
+    </select>
+
+    <button id="searchBtn">Search</button>
+</div>
+
+<div id="historyContainer" class="history-container"></div>
+
+<section id="suggestionsSection">
+    <h2>✨ Explore Top Destinations</h2>
+
+    <div class="suggestion-grid">
+        <div class="suggestion-card" data-country="India">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=400&h=240&fit=crop&auto=format&q=80" alt="India">
+            <span class="tag">🔥 Popular</span>
+            <h3>🇮🇳 India</h3>
         </div>
-    </header>
 
-    <main id="universityContainer">
-        <p class="status-msg">Search for a country to explore universities!</p>
-    </main>
+        <div class="suggestion-card" data-country="United States">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=400&h=240&fit=crop&auto=format&q=80" alt="USA">
+            <span class="tag">⭐ Top</span>
+            <h3>🇺🇸 USA</h3>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="suggestion-card" data-country="United Kingdom">
+            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?w=400&h=240&fit=crop&auto=format&q=80" alt="UK">
+            <span class="tag">🎓 Elite</span>
+            <h3>🇬🇧 UK</h3>
+        </div>
+
+        <div class="suggestion-card" data-country="Australia">
+            <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400&h=240&fit=crop&auto=format&q=80" alt="Australia">
+            <span class="tag">🌊 Trending</span>
+            <h3>🇦🇺 Australia</h3>
+        </div>
+
+        <div class="suggestion-card" data-country="Canada">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&h=240&fit=crop&auto=format&q=80" alt="Canada">
+            <span class="tag">❄️ Study Hub</span>
+            <h3>🇨🇦 Canada</h3>
+        </div>
+
+        <div class="suggestion-card" data-country="Germany">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&h=240&fit=crop&auto=format&q=80" alt="Germany">
+            <span class="tag">💰 Free Edu</span>
+            <h3>🇩🇪 Germany</h3>
+        </div>
+    </div>
+</section>
+
+<section id="trendingSection">
+    <h2>🔥 Top Universities Worldwide</h2>
+    <div class="trending-grid">
+        <div class="trend-card">Harvard University<br><span>USA • Ivy League</span></div>
+        <div class="trend-card">University of Oxford<br><span>UK • Elite</span></div>
+        <div class="trend-card">University of Toronto<br><span>Canada • Research</span></div>
+        <div class="trend-card">University of Melbourne<br><span>Australia • Top Ranked</span></div>
+    </div>
+</section>
+
+<div id="universityContainer"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
