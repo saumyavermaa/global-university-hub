@@ -5,7 +5,26 @@
 
 const countryInput = document.getElementById('countryInput');
 const searchBtn = document.getElementById('searchBtn');
+const cornerButton = document.getElementById('cornerButton');
 const universityContainer = document.getElementById('universityContainer');
+
+function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('theme', theme);
+    cornerButton.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+}
+
+cornerButton.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+});
 
 // Main search function --> // Get the value from the input and clean it up (lowercase and no extra spaces)
 async function fetchUniversities() {
@@ -96,6 +115,8 @@ searchBtn.addEventListener("click", fetchUniversities);
 countryInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") fetchUniversities();
 });
+
+loadTheme();
 
 // Cursor Tracking Logic
 const cursorGlow = document.querySelector('.cursor-glow');
